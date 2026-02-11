@@ -10,6 +10,7 @@ lto = "fat"
 opt-level = 's'
 codegen-units = 1
 
+
 [dependencies]
 arrayvec = "0.7"
 bytemuck = "1.9"

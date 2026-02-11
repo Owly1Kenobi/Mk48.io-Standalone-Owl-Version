@@ -246,9 +246,19 @@ fn entity_sprite_params(entity_type: EntityType, width: u32) -> Image {
         file_name = "Mark8";
     }
 
+    let path = format!("../assets/models/rendered/{file_name}/color0001.png");
+
+    println!("Creating Image for {} -> {} (width={})",
+             entity_type.as_str(),
+             path,
+             width);
+    if !std::path::Path::new(&path).exists() {
+        println!("WARNING: file does not exist: {}", path);
+    }
+
     Image {
-        name: entity_type.as_str().to_owned(),
-        file: format!("../assets/models/rendered/{file_name}/color0001.png"),
-        width,
+	name: entity_type.as_str().to_owned(),
+	file: path,
+	width,
     }
 }

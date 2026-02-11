@@ -367,7 +367,9 @@ pub fn pack_sprite_sheet(
                 .write_image(packed.as_raw(), size.x, size.y, ColorType::Rgba8)
                 .unwrap();
 
-            let optimized = if optimize {
+            println!("PNG encoding finished for {}x{}, {} bytes", size.x, size.y, unoptimized.len());
+
+            let optimized = if optimize && false {
                 optimize_from_memory(
                     &unoptimized,
                     &Options {

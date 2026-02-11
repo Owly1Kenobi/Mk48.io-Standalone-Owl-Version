@@ -260,6 +260,22 @@ pub enum EntityType {
     #[armament(Brosok, forward = 52, side = 0.5, angle = 0, symmetrical)]
     Akula,
     #[info(
+        label = "Albatros",
+        link = "https://en.wikipedia.org/wiki/Albatros-class_fast_attack_craft"
+    )]
+    #[entity(Boat, Corvette, level = 4)]
+    #[size(length = 57.8, width = 7.80, draft = 2.60, mast = 12)]
+    #[props(speed = 21.09)]
+    #[sensors(radar, visual)]
+    #[armament(Exocet, forward = -9.90, angle = 45, hidden)]
+    #[armament(Exocet, forward = -11.90, angle = 45, hidden)]
+    #[armament(Exocet, forward = -17.0, angle = -45, hidden)]
+    #[armament(Exocet, forward = -19.0, angle = -45, hidden)]
+    #[armament(Dm2A4, forward = -25.2, side = 3.0, angle = 0, symmetrical, external)]
+    #[turret(OtoMelara76MmCompacto, forward = 17.70, fast)]
+    #[turret(OtoMelara76MmCompacto, forward = -24.70, angle = 180, fast)]
+    Albatros,
+    #[info(
         label = "Arleigh Burke",
         link = "https://en.wikipedia.org/wiki/Arleigh_Burke-class_destroyer"
     )]
@@ -299,6 +315,18 @@ pub enum EntityType {
     #[exhaust(forward = -2)]
     #[exhaust(forward = -18.25)]
     ArleighBurke,
+    #[info(
+        label = "Astute",
+        link = "https://en.wikipedia.org/wiki/Astute-class_submarine"
+    )]
+    #[entity(Boat, Submarine, level = 10)]
+    #[size(length = 97, width = 11.3, draft = 10)]
+    #[props(speed = 15.4333, depth = 350, stealth = 0.5)]
+    #[sensors(radar, sonar, visual)]
+    #[armament(Spearfish, forward = 39.4, side = 2.3, angle = 0, count = 3, symmetrical)]
+    #[armament(SCAD102, forward = 39.4, side = 2.3, angle = 0, symmetrical, hidden)]
+    #[armament(SCAD102, forward = -32.0, side = 2.7, angle = -180, symmetrical, hidden)]
+    Astute,
     #[info(
         label = "Bismarck",
         link = "https://en.wikipedia.org/wiki/German_battleship_Bismarck"
@@ -495,6 +523,7 @@ pub enum EntityType {
     #[turret(forward = -13, medium, azimuth = 45)]
     #[turret(Mark12, forward = 37.75, medium, azimuth_b = 20)]
     #[turret(Mark12, forward = 30.24, medium, azimuth_b = 30)]
+    #[turret(Mark12, forward = -19.0, medium, angle = 0, azimuth_b = 30, azimuth_f = 20)]
     #[turret(Mark12, forward = -31.07, angle = 180, medium, azimuth_b = 30)]
     #[turret(Mark12, forward = -38.61, angle = 180, medium, azimuth_b = 20)]
     #[exhaust(forward = 9.5)]
@@ -755,6 +784,7 @@ pub enum EntityType {
     #[size(length = 95.8, width = 10.8, draft = 2.38)]
     #[props(speed = 8.5)]
     #[sensors(radar, visual)]
+    #[armament(Wz0839, forward = -37, side = 1.75, symmetrical, external)]
     #[armament(Wz0839, forward = -38, side = 1.75, symmetrical, external)]
     #[armament(Wz0839, forward = -39, side = 1.75, symmetrical, external)]
     #[armament(Wz0839, forward = -40, side = 1.75, symmetrical, external)]
@@ -896,6 +926,16 @@ pub enum EntityType {
     #[armament(Mark18, forward = -8, side = 1.8, angle = 4.5, symmetrical, external)]
     Pt34,
     #[info(
+        label = "Seawise Giant",
+        link = "https://en.wikipedia.org/wiki/Seawise_Giant"
+    )]
+    #[entity(Boat, Tanker, level = 9)]
+    #[size(length = 458.45, width = 68.6, draft = 29.8)]
+    #[props(speed = 8.488)]
+    #[sensors(visual)]
+    #[exhaust(forward = -200)]
+    SeawiseGiant,
+    #[info(
         label = "Seawolf",
         link = "https://en.wikipedia.org/wiki/Seawolf-class_submarine"
     )]
@@ -946,6 +986,17 @@ pub enum EntityType {
     #[armament(Mistral, forward = -6.08214, side = -4.51251, vertical, count = 3, symmetrical)]
     #[turret(OtoMelara76Mm, forward = 6.02709, fast, azimuth_b = 35)]
     Skjold,
+    #[info( 
+        label = "Sparviero",
+        link = "https://en.wikipedia.org/wiki/Sparviero-class_patrol_boat"
+    )]
+    #[entity(Boat, Corvette, level = 2)]
+    #[size(length = 22.95, width = 7.01, draft = 1.87)]
+    #[props(speed = 25.72)]
+    #[sensors(radar, visual)]
+    #[armament(Otomat, forward = -9.0, side = 2.3, angle = 10, symmetrical, hidden)]
+    #[turret(OtoMelara76MmCompacto, forward = 1.5, fast, azimuth_b = 35)]
+    Sparviero,
     #[info(
         label = "Oil Tanker",
         link = "https://en.wikipedia.org/wiki/Oil_tanker"
@@ -966,6 +1017,48 @@ pub enum EntityType {
     #[sensors(radar, visual)]
     #[exhaust(forward = 7.308, side = 4.531, symmetrical)]
     TerryFox,
+     #[info(
+        label = "Tuo Chiang",
+        link = "https://en.wikipedia.org/wiki/Tuo_Chiang-class_corvette"
+    )]
+    #[entity(Boat, Corvette, level = 8)]
+    #[size(length = 60.4, width = 14, draft = 2.3)]
+    #[props(speed = 23.15, stealth = 0.75)]
+    #[sensors(radar, sonar, visual)]
+    #[armament(
+        Mark54,
+        forward = 0.25,
+        side = 0.25,
+        angle = 0,
+        turret = 0,
+        symmetrical,
+        external
+    )]
+    #[armament(Mark54, forward = 0.25, angle = 0, turret = 0, external)]
+    #[armament(
+        Mark54,
+        forward = 0.25,
+        side = 0.25,
+        angle = 0,
+        turret = 1,
+        symmetrical,
+        external
+    )]
+    #[armament(Mark54, forward = 0.25, angle = 0, turret = 1, external)]
+    #[armament(HsiungFengII, forward = -12.1665, side = -0.55, angle = -90, count = 2)]
+    #[armament(HsiungFengII, forward = -10.9934, side = -0.55, angle = -90, count = 2)]
+    #[armament(HsiungFengII, forward = -3.34456, side = 0.55, angle = 90, count = 2)]
+    #[armament(HsiungFengII, forward = -2.14797, side = 0.55, angle = 90, count = 2)]
+    #[armament(HsiungFengIII, forward = -6.34973, side = -0.55, angle = -90, count = 2)]
+    #[armament(HsiungFengIII, forward = -7.94323, side = 0.55, angle = 90, count = 2)]
+    #[armament(TC2N, forward = -9.06748, side = 0.55, angle = 90, count = 2)]
+    #[armament(TC2N, forward = -9.5074, side = 0.55, angle = 90, count = 2)]
+    #[armament(TC2N, forward = -4.81814, side = -0.55, angle = -90, count = 2)]
+    #[armament(TC2N, forward = -5.27436, side = -0.55, angle = -90, count = 2)]
+    #[turret(forward = -15.7351, side = 5.56064, medium, azimuth_br = 180, azimuth_bl = 120)]
+    #[turret(forward = -15.7351, side = -5.56064, medium, azimuth_bl = 180, azimuth_br = 120)]
+    #[turret(OtoMelara76Mm, forward = 15.1198, fast, azimuth_b = 55)]
+    TuoChiang,
     #[info(
         label = "Town",
         link = "https://en.wikipedia.org/wiki/Town-class_cruiser_(1936)"
@@ -1023,6 +1116,21 @@ pub enum EntityType {
     #[exhaust(forward = -7.34, side = 1.45, symmetrical)]
     #[exhaust(forward = -17.34, side = 1.45, symmetrical)]
     Type055,
+    #[info(
+        label = "Type 212A",
+        link = "https://en.wikipedia.org/wiki/Type_212A_submarine"
+    )]
+    #[entity(Boat, Submarine, level = 7)]
+    #[size(length = 56, width = 7.2734, draft = 6.4, mast = 7.97656)]
+    #[props(speed = 10.2889, depth = 250, stealth = 0.75)]
+    #[sensors(radar, sonar, visual)]
+    #[armament(Dm2A4, forward = 24.25, side = -0.35, count = 2)]
+    #[armament(Dm2A4, forward = 24.15, side = 0.65, count = 2)]
+    #[armament(Dm2A4, forward = 23.6, side = 1.65, count = 2)]
+    #[armament(Idas, forward = 27, side = -0.367675, count = 4, vertical, hidden)]
+    #[armament(Tau2000, forward = 17.4621, side = 2.7, angle = 90, symmetrical, hidden)]
+    #[armament(Tau2000, forward = -7.68335, side = 2.7, angle = 90, symmetrical, hidden)]
+    Type212A,
     #[info(
         label = "Type VII C",
         link = "https://en.wikipedia.org/wiki/Type_VII_submarine"
@@ -1103,12 +1211,13 @@ pub enum EntityType {
     #[armament(Brosok, forward = -16.5, side = 1.5, angle = -180, symmetrical)]
     Yasen,
     #[info(label = "Zubr", link = "https://en.wikipedia.org/wiki/Zubr-class_LCAC")]
-    #[entity(Boat, Hovercraft, level = 2)]
+    #[entity(Boat, Hovercraft, level = 3)]
     #[size(length = 57, width = 21.152344, draft = 1.6)]
     #[props(speed = 28.29446)]
     #[sensors(radar, visual)]
-    #[turret(Ogon, forward = 15.2, fast)]
-    #[turret(_2M3M, forward = 10, side = 6.25, angle = 0, fast, symmetrical)]
+    #[turret(RatepKomar, forward = -3.5, side = 5, angle = 90, fast, azimuth_b = 40, symmetrical)]
+    #[turret(Ogon, forward = 19.0, side = 5.0, fast, symmetrical)]
+    #[turret(_2M3M, forward = 9.5, side = 6.25, angle = 0, fast, symmetrical)]
     #[exhaust(forward = -22.5)]
     #[exhaust(forward = -22.5, side = 6.91, symmetrical)]
     Zubr,
@@ -1123,8 +1232,10 @@ pub enum EntityType {
     #[armament(Tomahawk, forward = 16, side = 9, count = 2, symmetrical, vertical)]
     #[armament(Tomahawk, forward = -51.5, side = 9, count = 2, symmetrical, vertical)]
     #[armament(Asroc, forward = 39.5, side = 5.5, count = 2, symmetrical, vertical)]
+    #[armament(Asroc, forward = -53, side = 9, count = 1, symmetrical, vertical)]
     #[armament(Essm, forward = 35, side = 6, count = 2, symmetrical, vertical)]
     #[armament(Essm, forward = -56, side = 9, count = 2, symmetrical, vertical)]
+    #[armament(Mk70, forward = -84, side = 9, angle = 180, hidden)]
     #[armament(Seahawk, forward = -65, external)]
     #[turret(Mark51, forward = 49.5963, medium, azimuth_b = 20)]
     #[turret(Mark51, forward = 25.2885, medium, azimuth_b = 30)]
@@ -1371,8 +1482,16 @@ pub enum EntityType {
     #[armament(Of45, side = 0.3, angle = 0, symmetrical, hidden)]
     #[armament(Of45, side = 0.6, angle = 0, symmetrical, hidden)]
     #[armament(Of45, side = 0.9, angle = 0, symmetrical, hidden)]
-    #[armament(Of45, side = 1.2, angle = 0, symmetrical, hidden)]
     Ogon,
+    #[info(
+        label = "Otomat",
+        link = "https://en.wikipedia.org/wiki/Otomat"
+    )]
+    #[entity(Weapon, Missile, level = 4)]
+    #[size(length = 4.46, width = 0.66)]
+    #[props(speed = 305.6, range = 300000)]
+    #[sensors(radar)]
+    Otomat,
     #[info(
         label = "OTO Melara 76 mm",
         link = "https://en.wikipedia.org/wiki/OTO_Melara_76_mm"
@@ -1382,6 +1501,15 @@ pub enum EntityType {
     #[offset(forward = 1)]
     #[armament(_76X636MmR, forward = 2, angle = 0)]
     OtoMelara76Mm,
+    #[info(
+        label = "OTO Melara 76 mm Compact",
+        link = "https://en.wikipedia.org/wiki/OTO_Melara_76_mm"
+    )]
+    #[entity(Turret, Gun)]
+    #[size(length = 7.3, width = 3.0)]
+    #[offset(forward = 2)]
+    #[armament(_76X636MmR, forward = 3, angle = 0)]
+    OtoMelara76MmCompacto,
     #[info(
         label = "Komar",
         link = "https://en.wikipedia.org/wiki/9K38_Igla#Variants"
@@ -1480,6 +1608,15 @@ pub enum EntityType {
     #[size(length = 21.9, width = 5.1328)]
     #[props(range = 60)]
     Depositor,
+    #[info(
+        label = "DM2A4",
+        link = "https://en.wikipedia.org/wiki/DM2A4"
+    )]
+    #[entity(Weapon, Torpedo, level = 4)]
+    #[size(length = 6.6, width = 0.533)]
+    #[props(speed = 25.7223, range = 50000, damage = 1.25)]
+    #[sensors(sonar)]
+    Dm2A4,
     #[info(label = "ESSM", link = "https://en.wikipedia.org/wiki/RIM-162_ESSM")]
     #[entity(Weapon, Sam, level = 4)]
     #[size(length = 3.66, width = 0.4575)]
@@ -1507,6 +1644,30 @@ pub enum EntityType {
     #[props(speed = 950, range = 250000)]
     #[sensors(radar)]
     Hq9,
+     #[info(
+        label = "Hsiung Feng II",
+        link = "https://en.wikipedia.org/wiki/Hsiung_Feng_II"
+    )]
+    #[entity(Weapon, Missile, level = 4)]
+    #[size(length = 4.8, width = 1.0125)]
+    #[props(speed = 289.1667, range = 160000)]
+    #[sensors(radar)]
+    HsiungFengII,
+    #[info(
+        label = "Hsiung Feng III",
+        link = "https://en.wikipedia.org/wiki/Hsiung_Feng_III"
+    )]
+    #[entity(Weapon, Missile, level = 4)]
+    #[size(length = 6.1, width = 1.00078125)]
+    #[props(speed = 1200, range = 100000)]
+    #[sensors(radar)]
+    HsiungFengIII,
+    #[info(label = "IDAS", link = "https://en.wikipedia.org/wiki/IDAS_(missile)")]
+    #[entity(Weapon, Sam, level = 4)]
+    #[size(length = 2.8, width = 0.180)]
+    #[props(speed = 240, range = 40000)]
+    #[sensors(radar)]
+    Idas,
     #[info(label = "Igla", link = "https://en.wikipedia.org/wiki/9K38_Igla")]
     #[entity(Weapon, Sam, level = 4)]
     #[size(length = 1.574, width = 0.1599)]
@@ -1649,6 +1810,11 @@ pub enum EntityType {
     #[props(speed = 950, range = 250000)]
     #[sensors(radar)]
     S300,
+    #[info(label = "SCAD102", link = "https://cmano-db.com/weapon/336/")]
+    #[entity(Decoy, Sonar, level = 4)]
+    #[size(length = 2.075, width = 0.29)]
+    #[props(speed = 10, lifespan = 15)]
+    SCAD102,
     #[info(
         label = "Set 65",
         link = "https://commons.wikimedia.org/wiki/File:SET-65.svg"
@@ -1658,9 +1824,26 @@ pub enum EntityType {
     #[props(speed = 20.577778, range = 16000)]
     #[sensors(sonar)]
     Set65,
+    #[info(label = "Spearfish", link = "https://en.wikipedia.org/wiki/Spearfish_torpedo")]
+    #[entity(Weapon, Torpedo, level = 4)]
+    #[size(length = 7, width = 0.533)]
+    #[props(speed = 41.1556, range = 18000, damage = 1.25)]
+    #[sensors(sonar)]
+    Spearfish,
+    #[info(label = "TAU 2000", link = "https://cmano-db.com/weapon/2451/")]
+    #[entity(Decoy, Sonar, level = 4)]
+    #[size(length = 1.250, width = 0.125)]
+    #[props(speed = 10, lifespan = 15)]
+    Tau2000,
+    #[info(label = "TC-2N", link = "https://en.wikipedia.org/wiki/Sky_Sword_II")]
+    #[entity(Weapon, Sam, level = 4)]
+    #[size(length = 3.694, width = 0.606)]
+    #[props(speed = 2058, range = 100000)]
+    #[sensors(radar)]
+    TC2N,
     #[info(
         label = "Tomahawk",
-        link = "https://en.wikipedia.org/wiki/Tomahawk_(missile)"
+        link = "https://wikiperdia.org/wiki/Tomahawk_(missile)"
     )]
     #[entity(Weapon, Missile, level = 5)]
     #[size(length = 5.56, width = 2.60625)]
@@ -1702,7 +1885,7 @@ pub enum EntityType {
     )]
     #[entity(Weapon, Mine, level = 3)]
     #[size(length = 1.0725, width = 1.32)]
-    #[props(lifespan = 900)]
+    #[props(lifespan = 1200, reload = 20)]
     Wz0839,
     #[info(label = "YJ-18", link = "https://en.wikipedia.org/wiki/YJ-18")]
     #[entity(Weapon, Missile, level = 5)]

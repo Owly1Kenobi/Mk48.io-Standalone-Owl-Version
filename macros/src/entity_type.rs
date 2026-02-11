@@ -38,7 +38,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                 };
 
                 fn set_string(string: &mut Option<String>, meta: Meta) {
-                    let path = meta.path().get_ident().unwrap().to_string();
+                    let path = meta.path().get_ident().expect("41").to_string();
                     let Meta::NameValue(MetaNameValue{ lit, .. }) = meta else {
                     panic!("expected name value for {path}")
                 };
@@ -52,7 +52,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                 }
 
                 fn set_usize(int: &mut Option<usize>, meta: Meta) {
-                    let path = meta.path().get_ident().unwrap().to_string();
+                    let path = meta.path().get_ident().expect("55").to_string();
                     let Meta::NameValue(MetaNameValue{ lit, .. }) = meta else {
                     panic!("expected name value for {path}")
                 };
@@ -69,7 +69,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                 }
 
                 fn set_f32(float: &mut Option<f32>, meta: Meta) {
-                    let path = meta.path().get_ident().unwrap().to_string();
+                    let path = meta.path().get_ident().expect("72").to_string();
                     let Meta::NameValue(MetaNameValue{ lit, .. }) = meta else {
                         panic!("expected name value for {path}")
                     };
@@ -89,7 +89,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                 }
 
                 fn set_angle(angle: &mut Option<Angle>, meta: Meta) {
-                    let path = meta.path().get_ident().unwrap().to_string();
+                    let path = meta.path().get_ident().expect("92").to_string();
                     let Meta::NameValue(MetaNameValue{ lit, .. }) = meta else {
                         panic!("expected name value for {path}")
                     };
@@ -109,7 +109,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                 }
 
                 fn set_bool(boolean: &mut bool, meta: Meta) {
-                    let path = meta.path().get_ident().unwrap().to_string();
+                    let path = meta.path().get_ident().expect("112").to_string();
                     let Meta::Path(_) = meta else {
                     panic!("expected simple path for {path}")
                 };
@@ -119,7 +119,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                     *boolean = true;
                 }
 
-                let path = list.path.get_ident().unwrap().to_string();
+                let path = list.path.get_ident().expect("122").to_string();
                 match path.as_str() {
                     "info" => {
                         for nested in list.nested {
@@ -127,7 +127,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                                 panic!("expected nested meta, found {:?}", nested);
                             };
 
-                            let path = nested.path().get_ident().unwrap().to_string();
+                            let path = nested.path().get_ident().expect("130").to_string();
 
                             set_string(
                                 match path.as_str() {
@@ -146,7 +146,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                                 panic!("expected nested meta");
                             };
 
-                            let path = nested.path().get_ident().unwrap().to_string();
+                            let path = nested.path().get_ident().expect("149").to_string();
 
                             match i {
                                 0 => {
@@ -170,7 +170,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                             panic!("expected nested meta, found {:?}", nested);
                         };
 
-                            let path = nested.path().get_ident().unwrap().to_string();
+                            let path = nested.path().get_ident().expect("173").to_string();
 
                             set_f32(
                                 match path.as_str() {
@@ -190,7 +190,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                             panic!("expected nested meta");
                         };
 
-                            let path = nested.path().get_ident().unwrap().to_string();
+                            let path = nested.path().get_ident().expect("193").to_string();
 
                             set_f32(
                                 match path.as_str() {
@@ -208,7 +208,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                             panic!("expected nested meta");
                         };
 
-                            let path = nested.path().get_ident().unwrap().to_string();
+                            let path = nested.path().get_ident().expect("211").to_string();
 
                             match path.as_str() {
                                 "reload" => {
@@ -259,7 +259,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                                 Meta::List(_) => panic!("unexpected sensors list"),
                             }
                             .get_ident()
-                            .unwrap()
+                            .expect("262")
                             .to_string();
 
                             assert!(
@@ -276,7 +276,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                             panic!("expected nested meta");
                         };
 
-                            let path = nested.path().get_ident().unwrap().to_string();
+                            let path = nested.path().get_ident().expect("279").to_string();
 
                             match i {
                                 0 => {
@@ -326,7 +326,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                                 panic!("expected nested meta");
                             };
 
-                            let path = nested.path().get_ident().unwrap().to_string();
+                            let path = nested.path().get_ident().expect("329").to_string();
 
                             if matches!(nested, Meta::Path(_)) && path != "symmetrical" {
                                 if matches!(path.as_str(), "slow" | "medium" | "fast") {
@@ -395,7 +395,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                             panic!("expected nested meta");
                         };
 
-                            let path = nested.path().get_ident().unwrap().to_string();
+                            let path = nested.path().get_ident().expect("398").to_string();
 
                             match path.as_str() {
                                 "forward" => {
@@ -432,21 +432,21 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
             match entity.kind() {
                 "Weapon" => match entity.sub_kind() {
                     "Shell" => {
-                        *entity.speed.as_mut().unwrap() *= 0.75;
+                        *entity.speed.as_mut().expect("435") *= 0.75;
                     }
                     _ => {}
                 },
                 "Aircraft" => {
-                    *entity.speed.as_mut().unwrap() = entity.speed.unwrap().min(140.0);
+                    *entity.speed.as_mut().expect("440a") = entity.speed.expect("440b").min(140.0);
                 }
                 _ => {}
             }
-            *entity.speed.as_mut().unwrap() = entity.speed.unwrap().min(1000.0);
+            *entity.speed.as_mut().expect("444a") = entity.speed.expect("444b").min(1000.0);
         }
 
         if entity.range.is_some() && variant != "Depositor" {
             let mut max_range = 1500.0;
-            let mut avg_speed = entity.speed.unwrap();
+            let mut avg_speed = entity.speed.expect("449");
 
             match entity.kind() {
                 "Weapon" => {
@@ -474,7 +474,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                             let seconds = 0.1;
                             let mut d = 0.0;
                             while d < max_range {
-                                let delta = entity.speed.unwrap() - speed;
+                                let delta = entity.speed.expect("477") - speed;
                                 speed += delta.min(800.0 * seconds) * seconds;
                                 avg_speed += speed;
                                 count += 1;
@@ -490,8 +490,8 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                 }
                 _ => {}
             }
-            entity.range = Some(entity.range.unwrap().min(max_range));
-            let range_lifespan = 0.1f32.max(entity.range.unwrap() / avg_speed);
+            entity.range = Some(entity.range.expect("493").min(max_range));
+            let range_lifespan = 0.1f32.max(entity.range.expect("494") / avg_speed);
             if entity
                 .lifespan
                 .map(|lifespan| lifespan > range_lifespan)
@@ -554,7 +554,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
                         // Homing torpedoes do less damage.
                         /*
                         if entity.sensors.contains_key("sonar") {
-                            *damage.as_mut().unwrap() -= 0.1;
+                            *damage.as_mut().expect("557") -= 0.1;
                         }
                          */
                     }
@@ -668,7 +668,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
         }
         for (i, turret) in entity.turrets.iter().enumerate() {
             if let Some(_type) = turret._type.as_deref() {
-                for armament in original_entities.get(_type).unwrap().armaments.clone() {
+                for armament in original_entities.get(_type).expect("671").armaments.clone() {
                     armaments.push(Armament {
                         turret: Some(i),
                         ..armament
@@ -737,7 +737,7 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
 
         let mut armaments = std::mem::take(&mut entity.armaments);
         armaments.sort_by_key(|armament| {
-            let armament_data = original_entities.get(armament._type()).unwrap();
+            let armament_data = original_entities.get(armament._type()).expect("740");
             -match (armament_data.kind(), armament_data.sub_kind()) {
                 ("Weapon", "Torpedo") => 10,
                 ("Weapon", "Missile") => 9,
@@ -776,17 +776,17 @@ pub(crate) fn derive_entity_type(input: TokenStream) -> TokenStream {
             .mul(0.5)
             .length();
         entity.inv_size =
-            1.0 / (entity.radius * (1.0 / 30.0) * (1.0 - entity.stealth.unwrap()).powi(2)).min(1.0);
+            1.0 / (entity.radius * (1.0 / 30.0) * (1.0 - entity.stealth.expect("779")).powi(2)).min(1.0);
 
         max_radius = max_radius.max(entity.radius);
         if entity.kind() == "Boat" {
-            max_boat_level = max_boat_level.max(entity.level.unwrap() as u8);
+            max_boat_level = max_boat_level.max(entity.level.expect("783") as u8);
         }
     }
 
     let entity_datas = ordered_entity_names
         .iter()
-        .map(|s| entities.get(&*s).unwrap());
+        .map(|s| entities.get(&*s).expect("789"));
 
     let entity_type_as_strs: Vec<EntityTypeAsStr> = ordered_entity_names
         .iter()
@@ -893,19 +893,19 @@ struct Entity {
 
 impl Entity {
     fn kind(&self) -> &str {
-        self.kind.as_deref().unwrap()
+        self.kind.as_deref().expect("896")
     }
 
     fn sub_kind(&self) -> &str {
-        self.sub_kind.as_deref().unwrap()
+        self.sub_kind.as_deref().expect("900")
     }
 
     fn length(&self) -> f32 {
-        self.length.unwrap()
+        self.length.expect("904")
     }
 
     fn width(&self) -> f32 {
-        self.width.unwrap()
+        self.width.expect("908")
     }
 }
 
@@ -930,7 +930,7 @@ struct Armament {
 
 impl Armament {
     fn _type(&self) -> &str {
-        self._type.as_deref().unwrap()
+        self._type.as_deref().expect("933")
     }
 }
 
@@ -1077,7 +1077,7 @@ impl quote::ToTokens for Entity {
         let turrets = &self.turrets;
         let exhausts = &self.exhausts;
 
-        let label = self.label.as_deref().unwrap();
+        let label = self.label.as_deref().expect("1080");
         let link = quote_option(self.link.as_deref());
         let range = self.range.unwrap_or_default();
         let position_forward = self.position_forward.unwrap_or_default();
