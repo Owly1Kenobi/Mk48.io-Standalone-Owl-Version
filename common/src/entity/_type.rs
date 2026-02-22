@@ -247,6 +247,18 @@ pub enum EntityType {
     #[armament(Mark54, side = 0.75, symmetrical)]
     SuperFrelon,
     #[info(
+        label = "Aist",
+        link = "https://en.wikipedia.org/wiki/Aist-class_LCAC"
+    )]
+    #[entity(Boat, Hovercraft, level = 2)]
+    #[size(length = 47.3, width = 17.8, draft = 1.0)]
+    #[props(speed = 36.02)]
+    #[sensors(radar, visual)]
+    #[armament(Igla, forward = 12.269, side = 1.1537, count = 4, symmetrical, vertical)]
+    #[turret(_2M3M, forward = 19.453, side = 3.4395, angle = 0, fast, symmetrical)]
+    #[exhaust(forward = -12.0, side = 5, symmetrical)]
+    Aist,
+    #[info(
         label = "Akula",
         link = "https://en.wikipedia.org/wiki/Akula-class_submarine"
     )]
@@ -272,7 +284,7 @@ pub enum EntityType {
     #[armament(Exocet, forward = -17.0, angle = -45, hidden)]
     #[armament(Exocet, forward = -19.0, angle = -45, hidden)]
     #[armament(Dm2A4, forward = -25.2, side = 3.0, angle = 0, symmetrical, external)]
-    #[turret(OtoMelara76MmCompacto, forward = 17.70, fast)]
+    #[turret(OtoMelara76MmCompacto, forward = 16.80, fast)]
     #[turret(OtoMelara76MmCompacto, forward = -24.70, angle = 180, fast)]
     Albatros,
     #[info(
@@ -601,6 +613,37 @@ pub enum EntityType {
     #[armament(Set65, forward = 41, side = 0.5, angle = 0, symmetrical)]
     #[armament(Set65, forward = 41, side = 0.5, angle = 0, symmetrical)]
     Golf,
+    #[info(
+        label = "Hyuga", 
+        link = "https://en.wikipedia.org/wiki/Hyuga-class_helicopter_destroyer"
+    )]
+    #[entity(Boat, Carrier, level = 8)]
+    #[size(length = 197, width = 33, draft = 7)]
+    #[props(speed = 16.463)]
+    #[sensors(radar, sonar, visual)]
+    #[armament(Mark54, forward = -72.5, side = 16, angle = 90, count = 3, symmetrical)]
+    #[turret(_2M3M, forward = -95, side = 13.442, angle = 180, fast)]
+    #[turret(_2M3M, forward = 94., side = -7.09, angle = 0, fast)]
+    #[armament(Asroc, forward = -91, side = -9.4784, vertical)]
+    #[armament(Asroc, forward = -91.769, side = -9.4784, vertical)]
+    #[armament(Asroc, forward = -92.515, side = -9.4784, vertical)]
+    #[armament(Asroc, forward = -93.311, side = -9.4784, vertical)]
+    #[armament(Asroc, forward = -93.311, side = -6.469, vertical)]
+    #[armament(Asroc, forward = -92.515, side = -6.469, vertical)]
+    #[armament(Asroc, forward = -91.769, side = -6.469, vertical)]
+    #[armament(Asroc, forward = -91, side = -6.469, vertical)]
+    #[armament(Essm, forward = -93.311, side = -7.3644, count = 2, vertical)]
+    #[armament(Essm, forward = -91.769, side = -7.3644, count = 2, vertical)]
+    #[armament(Essm, forward = -92.311, side = -8.5881, count = 2, vertical)]
+    #[armament(Essm, forward = -91, side = -8.5881, count = 2, vertical)]
+    #[armament(Seahawk, forward = 48.2, side = 9.4, external)]
+    #[armament(Seahawk, forward = 7.54, side = 9.4, external)]
+    #[armament(Seahawk, forward = -33.1, side = 9.4, external)]
+    #[armament(Seahawk, forward = -73.6, side = 9.4, external)]
+    #[armament(Seahawk, forward = 48.2, side = -9.4, external)]
+    #[exhaust(forward = 3, side = -11.5)]
+    #[exhaust(forward = -15, side = -11.5)]
+    Hyuga, 
     #[info(
         label = "East Indiaman",
         link = "https://en.wikipedia.org/wiki/East_Indiaman"
@@ -961,6 +1004,22 @@ pub enum EntityType {
     )]
     Seawolf,
     #[info(
+        label = "Shershen",
+        link = "https://en.wikipedia.org/wiki/Shershen-class_torpedo_boat"
+    )]
+    #[entity(Boat, Mtb, level = 5)]
+    #[size(length = 34.08, width = 6.72, draft = 1.5)]
+    #[props(speed = 23.25)]
+    #[sensors(radar, visual)]
+    #[armament(Set65, forward = -1.0, side = 2.2, angle = 7.5, symmetrical, external)]
+    #[armament(Set65, forward = -8.6, side = 2.3, angle = 7.5, symmetrical, external)]
+    #[armament(Mark9, forward = -16.184, side = 1.6, angle = -7.5, symmetrical, external)]
+    #[armament(Mark9, forward = -15.344, side = 1.44, angle = -7.5, symmetrical, external)]
+    #[turret(RatepKomar4, forward = -7.0718, angle = 180, fast)]
+    #[turret(_2M3M, forward = 7.872, angle = 0, fast)]
+    #[turret(_2M3M, forward = -11.348, angle = 180, fast)]
+    Shershen,
+    #[info(
         label = "Skipjack",
         link = "https://en.wikipedia.org/wiki/Skipjack-class_submarine"
     )]
@@ -1174,6 +1233,8 @@ pub enum EntityType {
     #[armament(Rbs15, forward = -3, side = 3.5, angle = 90, symmetrical, external)]
     #[armament(Rbs15, forward = -2.25, side = 3.5, angle = 90, symmetrical, external)]
     #[armament(Rbs15, forward = -3, side = 3.5, angle = 90, symmetrical, external)]
+    #[armament(Caam, forward = -12.275, side = 0.39348, symmetrical, vertical)]
+    #[armament(Caam, forward = -14.421, side = 0.6796, symmetrical, vertical)]
     #[armament(Seahawk, forward = -23, external)]
     #[turret(forward = -22, side = 4.5, medium, azimuth_br = 180)]
     #[turret(forward = -22, side = -4.5, medium, azimuth_bl = 180)]
@@ -1216,7 +1277,7 @@ pub enum EntityType {
     #[props(speed = 28.29446)]
     #[sensors(radar, visual)]
     #[turret(RatepKomar, forward = -3.5, side = 5, angle = 90, fast, azimuth_b = 40, symmetrical)]
-    #[turret(Ogon, forward = 19.0, side = 5.0, fast, symmetrical)]
+    #[turret(Ogon, forward = 19.3, side = 4.6, fast, symmetrical)]
     #[turret(_2M3M, forward = 9.5, side = 6.25, angle = 0, fast, symmetrical)]
     #[exhaust(forward = -22.5)]
     #[exhaust(forward = -22.5, side = 6.91, symmetrical)]
@@ -1518,6 +1579,14 @@ pub enum EntityType {
     #[size(length = 1.874, width = 2.05)]
     #[armament(Igla, side = 0.75, angle = 0, symmetrical)]
     RatepKomar,
+    #[info(
+        label = "Komar",
+        link = "https://en.wikipedia.org/wiki/9K38_Igla#Variants"
+    )]
+    #[entity(Turret, Missile)]
+    #[size(length = 1.874, width = 2.05)]
+    #[armament(Igla, side = 0.75, count = 2, angle = 0, symmetrical)]
+    RatepKomar4,
     #[info(label = "Shtorm", link = "https://en.wikipedia.org/wiki/M-11_Shtorm")]
     #[entity(Turret, Sam)]
     #[size(length = 5.8, width = 3.1265626)]
@@ -1598,6 +1667,12 @@ pub enum EntityType {
     #[props(speed = 993.9, range = 650000)]
     #[sensors(radar)]
     BrahMos,
+    #[info(label = "CAAM")]
+    #[entity(Weapon, Sam, level = 4)]
+    #[size(length = 3.2, width = 0.166)]
+    #[props(speed = 1029, range = 25000)]
+    #[sensors(radar)]
+    Caam,
     #[info(label = "Cannon Ball")]
     #[entity(Weapon, Shell)]
     #[size(length = 0.091, width = 0.091)]
@@ -1810,7 +1885,7 @@ pub enum EntityType {
     #[props(speed = 950, range = 250000)]
     #[sensors(radar)]
     S300,
-    #[info(label = "SCAD102", link = "https://cmano-db.com/weapon/336/")]
+    #[info(label = "SCAD-102", link = "https://cmano-db.com/weapon/336/")]
     #[entity(Decoy, Sonar, level = 4)]
     #[size(length = 2.075, width = 0.29)]
     #[props(speed = 10, lifespan = 15)]
