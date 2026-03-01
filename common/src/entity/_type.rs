@@ -216,6 +216,16 @@ pub enum EntityType {
     #[armament(Mark18)]
     Kingfisher,
     #[info(
+        label = "M6A Seiran", 
+        link = "https://en.wikipedia.org/wiki/Aichi_M6A_Seiran"
+    )]
+    #[entity(Aircraft, Plane, level = 5)]
+    #[size(length = 11.64, width = 12.262)]
+    #[props(speed = 110, range = 1188000)]
+    #[sensors(visual)]
+    #[armament(Type91)]
+    M6A,
+    #[info(
         label = "Seahawk",
         link = "https://en.wikipedia.org/wiki/Sikorsky_SH-60_Seahawk"
     )]
@@ -644,6 +654,22 @@ pub enum EntityType {
     #[exhaust(forward = 3, side = -11.5)]
     #[exhaust(forward = -15, side = -11.5)]
     Hyuga, 
+    #[info(
+        label = "I-400",
+        link = "https://en.wikipedia.org/wiki/I-400-class-submarine"
+    )]
+    #[entity(Boat, Submarine, level = 4)]
+    #[size(length = 122, width = 12, draft = 7.0)]
+    #[props(speed = 9.62, depth = 100)]
+    #[sensors(radar, sonar, visual)]
+    #[armament(Type95, forward = 41.2, side = 1.9, count = 2, angle = 0, symmetrical)]
+    #[armament(Type95, forward = 41.6, side = 1.7, count = 2, angle = 0, symmetrical)]
+    #[armament(M6A, forward = 20, side = -0.45, count = 3, angle = 0, external)]
+    #[turret(_14Cm11Year, forward = -33.5, angle = 180, medium, azimuth_b = 10)]
+    #[turret(_2M3M, forward = 7.0, angle = 0, fast, azimuth_bl = 45)]
+    #[turret(_2M3M, forward = -9.3, angle = 180, fast, azimuth_br = 45)]
+    #[turret(_2M3M, forward = -20.3, angle = 180, fast)]
+    I400,
     #[info(
         label = "East Indiaman",
         link = "https://en.wikipedia.org/wiki/East_Indiaman"
@@ -1233,8 +1259,8 @@ pub enum EntityType {
     #[armament(Rbs15, forward = -3, side = 3.5, angle = 90, symmetrical, external)]
     #[armament(Rbs15, forward = -2.25, side = 3.5, angle = 90, symmetrical, external)]
     #[armament(Rbs15, forward = -3, side = 3.5, angle = 90, symmetrical, external)]
-    #[armament(Caam, forward = -12.275, side = 0.39348, symmetrical, vertical)]
-    #[armament(Caam, forward = -14.421, side = 0.6796, symmetrical, vertical)]
+    #[armament(Camm, forward = -12.275, side = 0.39348, symmetrical, vertical)]
+    #[armament(Camm, forward = -14.421, side = 0.6796, symmetrical, vertical)]
     #[armament(Seahawk, forward = -23, external)]
     #[turret(forward = -22, side = 4.5, medium, azimuth_br = 180)]
     #[turret(forward = -22, side = -4.5, medium, azimuth_bl = 180)]
@@ -1402,6 +1428,15 @@ pub enum EntityType {
     #[offset(forward = 0.5, side = 0.25)]
     #[armament(_57X441MmR, forward = 0.5, angle = 0, hidden)]
     _6Pounder,
+    #[info(
+        label = "14 cm/40 11th Year Type",
+        link = "https://en.wikipedia.org/wiki/14_cm/40_11th_Year_Type_naval_gun"
+    )]
+    #[entity(Turret, Gun)]
+    #[size(length = 5.65, width = 0.85)]
+    #[offset(forward = 0.8)]
+    #[armament(_130X720MmR, forward = 0.5, angle = 0, hidden)]
+    _14Cm11Year,
     #[info(
         label = "8.8 cm SK C/35",
         link = "https://en.wikipedia.org/wiki/8.8_cm_SK_C/35_naval_gun"
@@ -1667,12 +1702,12 @@ pub enum EntityType {
     #[props(speed = 993.9, range = 650000)]
     #[sensors(radar)]
     BrahMos,
-    #[info(label = "CAAM")]
+    #[info(label = "CAMM")]
     #[entity(Weapon, Sam, level = 4)]
     #[size(length = 3.2, width = 0.166)]
     #[props(speed = 1029, range = 25000)]
     #[sensors(radar)]
-    Caam,
+    Camm,
     #[info(label = "Cannon Ball")]
     #[entity(Weapon, Shell)]
     #[size(length = 0.091, width = 0.091)]
@@ -1939,6 +1974,22 @@ pub enum EntityType {
     #[size(length = 7.2, width = 0.533)]
     #[props(speed = 23.2, range = 18000)]
     Type53,
+    #[info(
+        label = "Type 91",
+        link = "https://en.wikipedia.org/wiki/Type_91_torpedo"
+    )]
+    #[entity(Weapon, Torpedo, level = 1)]
+    #[size(length = 5.27, width = 0.450)]
+    #[props(speed = 21.6, range = 2000)]
+    Type91,
+    #[info(
+        label = "Type 95",
+        link = "https://en.wikipedia.org/wiki/Type_95_torpedo"
+    )]
+    #[entity(Weapon, Torpedo, level = 1)]
+    #[size(length = 7.1, width = 0.533)]
+    #[props(speed = 26.237, range = 9000)]
+    Type95,
     #[info(label = "Shtorm", link = "https://en.wikipedia.org/wiki/M-11_Shtorm")]
     #[entity(Weapon, Sam, level = 4)]
     #[size(length = 6.15, width = 1.3453125)]
