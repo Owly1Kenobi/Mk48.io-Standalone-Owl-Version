@@ -726,6 +726,22 @@ pub enum EntityType {
     #[exhaust(forward = -30.58)]
     Iowa,
     #[info(
+        label = "K-222",
+        link = "https://en.wikipedia.org/wiki/Soviet_submarine_K-222"
+    )]
+    #[entity(Boat, Submarine, level = 6)]
+    #[size(length = 106.92, width = 11.5, draft = 8.2)]
+    #[props(speed = 23.0, depth = 400)]
+    #[sensors(radar, sonar, visual)]
+    #[armament(Set65, forward = 48.0, side = 1.2, angle = 0, count = 2, symmetrical)]
+    #[armament(Brosok, forward = 48, side = 1.2, angle = 0, hidden)]
+    #[armament(P70, forward = 24, side = 3.7, hidden)]
+    #[armament(P70, forward = 28.2, side = -3.7, hidden)]
+    #[armament(P70, forward = 32.384, side = 3.7, hidden)]
+    #[armament(P70, forward = 36.576, side = -3.7, hidden)]
+    #[armament(P70, forward = 40.768, side = 3.7, hidden)]
+    K222,
+    #[info(
         label = "Kirov",
         link = "https://en.wikipedia.org/wiki/Kirov-class_battlecruiser"
     )]
@@ -984,6 +1000,22 @@ pub enum EntityType {
     #[turret(_2M3M, forward = -16.5, angle = 180, fast)]
     Osa,
     #[info(
+        label = "Oscar II",
+        link = "https://en.wikipedia.org/wiki/Oscar-class_submarine"
+    )]
+    #[entity(Boat, Submarine, level = 8)]
+    #[size(length = 155, width = 18.2, draft = 9)]
+    #[props(speed = 16.463, depth = 600)]
+    #[sensors(radar, sonar, visual)]
+    #[armament(Set65, forward = 71.0, side = 3.2, angle = 0, count = 2, symmetrical)]
+    #[armament(Rpk6, forward = 71.0, side = 3.2, angle = 0, symmetrical)]
+    #[armament(P700, forward = 45.7, side = 5.8, angle = 0, symmetrical, hidden)]
+    #[armament(P700, forward = 32.2, side = 5.8, angle = 0, symmetrical, hidden)]
+    #[armament(P700, forward = 17.6, side = 5.8, angle = 0, symmetrical, hidden)]
+    #[armament(Igla, forward = 28.2, count = 2, vertical)]
+    #[armament(Brosok, forward = 71.0, side = 3.2, angle = 0, symmetrical)]
+    OscarII,
+    #[info(
         label = "PT-34",
         link = "https://en.wikipedia.org/wiki/Patrol_torpedo_boat_PT-34"
     )]
@@ -1102,7 +1134,20 @@ pub enum EntityType {
     #[sensors(radar, visual)]
     #[exhaust(forward = 7.308, side = 4.531, symmetrical)]
     TerryFox,
-     #[info(
+    #[info( 
+        label = "Tuuli",
+        link = "https://en.wikipedia.org/wiki/Finnish_hovercraft_Tuuli"
+    )]
+    #[entity(Boat, Hovercraft, level = 5)]
+    #[size(length = 27.4, width = 15.4, draft = 1)]
+    #[props(speed = 25.72, stealth = 0.75)]
+    #[sensors(radar, visual)]
+    #[exhaust(forward = -12.0, side = 3.1, symmetrical)]
+    #[armament(Torped45, forward = -8.0, side = 4.7, angle = 2, symmetrical, hidden)]
+    #[armament(Rbs15, forward = -5.0, side = 4.7, count = 2, angle = 2, symmetrical, hidden)]
+    #[armament(Umkhonto, forward = 4.36, side = 1.0, count = 3, symmetrical, vertical)]
+    Tuuli,
+    #[info(
         label = "Tuo Chiang",
         link = "https://en.wikipedia.org/wiki/Tuo_Chiang-class_corvette"
     )]
@@ -1285,7 +1330,7 @@ pub enum EntityType {
         label = "Yasen",
         link = "https://en.wikipedia.org/wiki/Yasen-class_submarine"
     )]
-    #[entity(Boat, Submarine, level = 8)]
+    #[entity(Boat, Submarine, level = 9)]
     #[size(length = 130, width = 19.804688, draft = 10)]
     #[props(speed = 18.00556, depth = 450)]
     #[sensors(radar, sonar, visual)]
@@ -1879,6 +1924,15 @@ pub enum EntityType {
     #[sensors(radar)]
     P15,
     #[info(
+        label = "P-70 Ametist",
+        link = "https://en.wikipedia.org/wiki/P-70_Ametist"
+    )]
+    #[entity(Weapon, Missile, level = 4)]
+    #[size(length = 7, width = 2.0)]
+    #[props(speed = 343, range = 65000)]
+    #[sensors(radar)]
+    P70,
+    #[info(
         label = "P-700 Granit",
         link = "https://en.wikipedia.org/wiki/P-700_Granit"
     )]
@@ -1990,6 +2044,12 @@ pub enum EntityType {
     #[size(length = 7.1, width = 0.533)]
     #[props(speed = 26.237, range = 9000)]
     Type95,
+    #[info(label = "Umkhonto", link = "https://en.wikipedia.org/wiki/Umkhonto_(missile)")]
+    #[entity(Weapon, Sam, level = 4)]
+    #[size(length = 3.32, width = 0.18)]
+    #[props(speed = 686, range = 30000)]
+    #[sensors(radar)]
+    Umkhonto,
     #[info(label = "Shtorm", link = "https://en.wikipedia.org/wiki/M-11_Shtorm")]
     #[entity(Weapon, Sam, level = 4)]
     #[size(length = 6.15, width = 1.3453125)]
