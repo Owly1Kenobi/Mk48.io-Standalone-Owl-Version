@@ -189,19 +189,6 @@ pub enum EntityType {
     #[armament(Mark18)]
     E4N,
     #[info(
-        label = "F-35C Lightning II",
-        link = "https://en.wikipedia.org/wiki/Lockheed_Martin_F-35_Lightning_II"
-    )]
-    #[entity(Aircraft, Plane, level = 7)]
-    #[size(length = 15.7, width = 11)]
-    #[props(speed = 500, range = 2800000, stealth = 0.50)]
-    #[sensors(radar, visual)]
-    #[armament(Lrasm)]
-    #[armament(Lrasm)]
-    #[armament(Aim9)]
-    #[armament(Aim9)]
-    F35,
-    #[info(
         label = "Harbin Z-9",
         link = "https://en.wikipedia.org/wiki/Harbin_Z-9"
     )]
@@ -1001,24 +988,6 @@ pub enum EntityType {
     #[exhaust(forward = -13.35)]
     Moskva,
     #[info(
-        label = "Nimitz",
-        link = "https://en.wikipedia.org/wiki/Nimitz-class_aircraft_carrier"
-    )]
-    #[entity(Boat, Carrier, level = 10)]
-    #[size(length = 332.8, width = 76.8, draft = 11.3, mast = 60)]
-    #[props(speed = 16.2)]
-    #[sensors(radar, visual)]
-    #[armament(F35, forward = 49.6, side = -20.8, angle = -5.2, count = 3, external)]
-    #[armament(F35, forward = 45.6, side = 3.7, angle = 2, count = 3, external)]
-    #[armament(F35, forward = -42.697, side = 17.39, angle = -5.5, external)]
-    #[armament(F35, forward = -64.3, side = 29.5, angle = 0, external)]
-    #[armament(Seahawk, forward = -107.8, side = 27.67, external)]
-    #[armament(Seahawk, forward = -97.8, side = -30.6, external)]
-    #[armament(Seahawk, forward = -21.3, side = -30.6, external)]
-    #[turret(Mark49Nim, forward = -153.9, side = -28.7, angle = 180, fast)]
-    #[turret(Mark49Nim, forward = 102.5, side = 20.8, angle = 0, fast)]
-    Nimitz,
-    #[info(
         label = "Oberon",
         link = "https://en.wikipedia.org/wiki/Oberon-class_submarine"
     )]
@@ -1209,7 +1178,19 @@ pub enum EntityType {
     )]
     #[entity(Boat, Hovercraft, level = 5)]
     #[size(length = 27.4, width = 15.4, draft = 1)]
+    #[props(speed = 25.72, stealth = 0.50    #[info(
+        label = "Tuuli",
+        link = "https://en.wikipedia.org/wiki/Finnish_hovercraft_Tuuli"
+    )]
+    #[entity(Boat, Hovercraft, level = 5)]
+    #[size(length = 27.4, width = 15.4, draft = 1)]
     #[props(speed = 25.72, stealth = 0.50)]
+    #[sensors(radar, visual)]
+    #[exhaust(forward = -12.0, side = 3.1, symmetrical)]
+    #[armament(Torped45, forward = -8.0, side = 4.7, angle = 2, symmetrical, hidden)]
+    #[armament(Rbs15, forward = -5.0, side = 4.7, count = 2, angle = 2, symmetrical, h>
+    #[armament(Umkhonto, forward = 4.36, side = 1.0, count = 3, symmetrical, vertical)]
+    Tuuli,)]
     #[sensors(radar, visual)]
     #[exhaust(forward = -12.0, side = 3.1, symmetrical)]
     #[armament(Torped45, forward = -8.0, side = 4.7, angle = 2, symmetrical, hidden)]
@@ -1658,15 +1639,6 @@ pub enum EntityType {
     #[armament(Rim116, angle = 0, count = 8, hidden)]
     Mark49,
     #[info(
-        label = "Mark 49", 
-        link = "https://en.wikipedia.org/wiki/RIM-116_Rolling_Airframe_Missile"
-    )]
-    #[entity(Turret, Sam)]
-    #[size(length = 3.02, width = 2.00547)]
-    #[offset(forward = 0.15)]
-    #[armament(Rim116, angle = 0, count = 6, hidden)]
-    Mark49Nim,
-    #[info(
         label = "Mark 51",
         link = "https://en.wikipedia.org/wiki/Advanced_Gun_System"
     )]
@@ -1807,12 +1779,6 @@ pub enum EntityType {
     #[props(speed = 23, range = 10000)]
     #[sensors(sonar)]
     _82R,
-    #[info(label = "Aim-9", link = "https://en.wikipedia.org/wiki/AIM-9_Sidewinder")]
-    #[entity(Weapon, Sam, level = 5)]
-    #[size(length = 3, width = 0.28)]
-    #[props(speed = 857, range = 18000)]
-    #[sensors(radar)]
-    Aim9,
     #[info(label = "ASROC", link = "https://en.wikipedia.org/wiki/RUR-5_ASROC")]
     #[entity(Weapon, RocketTorpedo, level = 5)]
     #[size(length = 4.5, width = 0.80859)]
@@ -1930,12 +1896,6 @@ pub enum EntityType {
     #[size(length = 2.3, width = 0.2875)]
     #[props(speed = 825, range = 140000, reload = 6)]
     Lrlap,
-    #[info(label = "LRASM", link = "https://en.wikipedia.org/wiki/AGM-158C_LRASM")]
-    #[entity(Weapon, Missile, level = 5)]
-    #[size(length = 4.26, width = 0.635)]
-    #[props(speed = 308, stealth = 0.75, range = 930000)]
-    #[sensors(radar)]
-    Lrasm,
     #[info(label = "Magic", link = "https://en.wikipedia.org/wiki/R.550_Magic")]
     #[entity(Weapon, Sam, level = 5)]
     #[size(length = 2.72, width = 0.5)]
@@ -2148,7 +2108,12 @@ pub enum EntityType {
     #[props(speed = 21.6, range = 2000)]
     Type91,
     #[info(
-        label = "Type 95",
+        la    #[info(label = "Umkhonto", link = "https://en.wikipedia.org/wiki/Umkhonto_(missile>
+    #[entity(Weapon, Sam, level = 4)]
+    #[size(length = 3.32, width = 0.18)]
+    #[props(speed = 686, range = 30000)]
+    #[sensors(radar)]
+    Umkhonto,bel = "Type 95",
         link = "https://en.wikipedia.org/wiki/Type_95_torpedo"
     )]
     #[entity(Weapon, Torpedo, level = 1)]
@@ -2161,6 +2126,37 @@ pub enum EntityType {
     #[props(speed = 686, range = 30000)]
     #[sensors(radar)]
     Umkhonto,
+    #[info(label = "Shtorm", link = "https://en.wikipedia.org/wiki/M-11_Shtorm")]
+    #[entity(Weapon, Sam, level = 4)]
+    #[size(length = 6.15, width = 1.3453125)]
+    #[props(speed = 600, range = 30000)]
+    #[sensors(radar)]
+    V611,
+    #[info(
+        label = "Crotale VT-1",
+        link = "https://en.wikipedia.org/wiki/Crotale_(missile)"
+    )]
+    #[entity(Weapon, Sam, level = 5)]
+    #[size(length = 2.35, width = 0.34)]
+    #[props(speed = 1200, range = 6000)]
+    #[sensors(radar)]
+    Vt1,
+    #[info(
+        label = "wz. 08/39",
+        link = "https://pl.wikipedia.org/wiki/Plik:Mina_morska_typu_M_1908-39.jpg"
+    )]
+    #[entity(Weapon, Mine, level = 3)]
+    #[size(length = 1.0725, width = 1.32)]
+    #[props(lifespan = 1200, reload = 20)]
+    Wz0839,
+    #[info(label = "YJ-18", link = "https://en.wikipedia.org/wiki/YJ-18")]
+    #[entity(Weapon, Missile, level = 5)]
+    #[size(length = 8.1, width = 4.11328)]
+    #[props(speed = 265.04, range = 540000)]
+    #[sensors(radar)]
+    Yj18,
+}
+nto,
     #[info(label = "Shtorm", link = "https://en.wikipedia.org/wiki/M-11_Shtorm")]
     #[entity(Weapon, Sam, level = 4)]
     #[size(length = 6.15, width = 1.3453125)]
