@@ -363,25 +363,6 @@ pub enum EntityType {
     #[exhaust(forward = -2)]
     #[exhaust(forward = -18.25)]
     ArleighBurke,
-    #[info( 
-        label = "ASEV",
-        link = "https://en.wikipedia.org/wiki/Aegis_system_equipped_vessel_(ASEV)"
-    )]
-    #[entity(Boat, Destroyer, level = 10)]
-    #[size(length = 190, width = 25, draft = 8.4)]
-    #[props(speed = 15.95, stealth = 0.5)]
-    #[sensors(radar, sonar, visual)]
-    #[armament(Type12, forward = 50, side = 2, count = 4, symmetrical, vertical)]
-    #[armament(Type12, forward = -58, side = 2, count = 4, symmetrical, vertical)]
-    #[armament(Type07, forward = 46, side = 2, count = 1, symmetrical, vertical)]
-    #[armament(Type07, forward = 46, vertical)]
-    #[armament(Type07, forward = -54, side = 2, count = 1, symmetrical, vertical)]
-    #[armament(Type07, forward = -54, vertical)]
-    #[armament(SM3, forward = 42, side = 2, count = 2, symmetrical, vertical)]
-    #[armament(SM3, forward = -52, side = 2, count = 2, symmetrical, vertical)]
-    #[armament(Seahawk, forward = -86.3, external)]
-    #[turret(Mark12, forward = 60, fast, azimuth_b = 20)]
-    ASEV,
     #[info(
         label = "Astute",
         link = "https://en.wikipedia.org/wiki/Astute-class_submarine"
@@ -409,19 +390,6 @@ pub enum EntityType {
     #[turret(_38CmSkc34, forward = -73.124, angle = 180, slow, azimuth_b = 20)]
     #[exhaust(forward = -1)]
     Bismarck,
-    #[info(label = "Boss Ship")]
-    #[entity(Boat, Battleship, level = 10)]
-    #[size(length = 320, width = 70, draft = 12, mast = 38.9)]
-    #[props(speed = 20.58)]
-    #[sensors(radar, sonar, visual)]
-    #[armament(P700, forward = -64.7, side = 6.4, angle = 10, count = 3, symmetrical, hidden)]
-    #[armament(S300, forward = -112, side = 10, count = 2, symmetrical, vertical)]
-    #[armament(Seahawk, forward = -132.8, external)]
-    #[turret(Mark7, forward = 33.51, slow, azimuth_b = 20)]
-    #[turret(Mark7, forward = 9.3, side = 18.52, slow, symmetrical, azimuth_br = 40)]
-    #[turret(Mark7, forward = -14, side = 18.52, slow, symmetrical, azimuth_br = 40)]
-    #[turret(Mark7, forward = -71, side = 25, slow, symmetrical, angle = 180, azimuth_bl = 40)]
-    BossShip,
     #[info(
         label = "Buyan",
         link = "https://en.wikipedia.org/wiki/Buyan-class_corvette"
@@ -436,24 +404,6 @@ pub enum EntityType {
     #[turret(RatepKomar, forward = 15.6236, fast, azimuth_b = 60)]
     #[turret(RatepKomar, forward = -17.8952, angle = 180, fast, azimuth_b = 40)]
     Buyan,
-    #[info(
-        label = "Choe Hyon",
-        link = "https://en.wikipedia.org/wiki/Choe_Hyon-class_destroyer"
-    )]
-    #[entity(Boat, Destroyer, level = 9)]
-    #[size(length = 145, width = 16, draft = 9)]
-    #[props(speed = 15.43, stealth = 0.5)]
-    #[sensors(radar, sonar, visual)]
-    #[armament(P700, forward = -40, side = 1.9, count = 2, symmetrical, vertical)]
-    #[armament(P700, forward = -45, side = 1.9, count = 2, symmetrical, vertical)]
-    #[armament(S300, forward = -30.3, side = 4, count = 2, symmetrical, vertical)]
-    #[armament(S300, forward = 26, side = 3.4, count = 2, symmetrical, vertical)]
-    #[armament(Harpoon, forward = -10, side = 2.13, count = 2, angle = 90, symmetrical)]
-    #[armament(Harpoon, forward = -8, side = 2.13, count = 2, angle = 90, symmetrical)]
-    #[armament(Set65, forward = 9, side = 7, count = 2, angle = 90, symmetrical, hidden)]
-    #[armament(Ka25, forward = -60, external)]
-    #[turret(A190, forward = 40.8, medium, azimuth_b = 20)]
-    ChoeHyon,
     #[info(
         label = "Clemenceau",
         link = "https://en.wikipedia.org/wiki/Clemenceau-class_aircraft_carrier"
@@ -580,7 +530,7 @@ pub enum EntityType {
     #[armament(Exocet, forward = 7.2793, side = -2.368, count = 2, angle = -90, external)]
     #[armament(Exocet, forward = 6.0515, side = -2.368, count = 2, angle = -90, external)]
     #[armament(Exocet, forward = 1.666, side = 2.368, count = 2, angle = 90, external)]
-    #[armament(Exocet, forward = 2.8938, side = 2.368, count = 2, angle = 90, external)]
+    #[armament(Exocet, forward = 2.8938, side = 2.368, count = 2, angle = 0, external)]
     #[armament(Seahawk, forward = -50.5, external)]
     #[turret(OtoMelara76Mm, forward = 44.2, fast, azimuth_b = 20)]
     #[exhaust(forward = -5.35)]
@@ -980,18 +930,6 @@ pub enum EntityType {
     #[turret(Bl6MkXxiii, forward = -56.3283, angle = 180, medium, azimuth_b = 20)]
     #[exhaust(forward = 7)]
     Leander,
-    #[info(
-        label = "Libelle",
-        link = "https://en.wikipedia.org/wiki/Libelle-class_torpedo_boat"
-    )]
-    #[entity(Boat, Mtb, level = 2)]
-    #[size(length = 19, width = 4.42, draft = 1.74)]
-    #[props(speed = 24.7)]
-    #[sensors(radar, visual)]
-    #[armament(Set65, forward = -7, side = 1.558, angle = 4, symmetrical, external)]
-    #[armament(Wz0839, forward = -2.27, side = 1.656, symmetrical, hidden)]
-    #[turret(_2M3M, forward = -8.64, angle = 180, fast)]
-    Libelle,
     #[info(
         label = "Lublin",
         link = "https://en.wikipedia.org/wiki/Lublin-class_minelayer-landing_ship"
@@ -2194,12 +2132,6 @@ pub enum EntityType {
     #[props(speed = 20.577778, range = 16000)]
     #[sensors(sonar)]
     Set65,
-    #[info(label = "SM-3", link = "kttps://en.wikipedia.org/wiki/RIM-161_Standard_Missile_3")]
-    #[entity(Weapon, Sam, level = 5)]
-    #[size(length = 6.55, width = 1.57)]
-    #[props(speed = 1543, range = 1200000)]
-    #[sensors(radar)]
-    SM3,
     #[info(label = "Spearfish", link = "https://en.wikipedia.org/wiki/Spearfish_torpedo")]
     #[entity(Weapon, Torpedo, level = 4)]
     #[size(length = 7, width = 0.533)]
@@ -2232,18 +2164,6 @@ pub enum EntityType {
     #[props(speed = 20.57779, range = 20000)]
     #[sensors(sonar)]
     Torped45,
-    #[info(label = "Type 07", link = "https://en.wikipedia.org/wiki/Type_07_vertical-launch_anti-submarine_rocket")]
-    #[entity(Weapon, RocketTorpedo, level = 5)]
-    #[size(length = 6.535, width = 0.80)]
-    #[props(speed = 343, range = 30000, damage = 0)]
-    #[armament(Mark54)]
-    Type07,
-    #[info(label = "Type 12", link = "https://en.wikipedia.org/wiki/Type_12_surface-to-ship_missile")]
-    #[entity(Weapon, Missile, level = 5)]
-    #[size(length = 5, width = 1)]
-    #[props(speed = 309, range = 400000)]
-    #[sensors(radar)]
-    Type12,
     #[info(
         label = "Type 53",
         link = "https://en.wikipedia.org/wiki/Type_53_torpedo"
