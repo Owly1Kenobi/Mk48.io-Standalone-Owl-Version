@@ -1008,6 +1008,19 @@ pub enum EntityType {
     #[armament(Wz0839, forward = -42, side = 1.75, symmetrical, external)]
     Lublin,
     #[info(
+        label = "Mikasa",
+        link = "https://en.wikipedia.org/wiki/Japanese_battleship_Mikasa"
+    )]
+    #[entity(Boat, Dreadnought, level = 2)]
+    #[size(length = 131.7, width = 23.2, draft = 8.2)]
+    #[props(speed = 9.26)]
+    #[sensors(visual)]
+    #[armament(Mark18, forward = -26.73, side = -9.9, angle = -90, symmetrical, hidden)]
+    #[armament(Mark18, forward = 28.0, side = -9.9, angle = -90, symmetrical, hidden)]
+    #[turret(VickersMkH12In, forward = 31.55, slow, azimuth_b = 50)]
+    #[turret(VickersMkH12In, forward = -32.94, angle = 180, slow, azimuth_b = 45)]
+    Mikasa,
+    #[info(
         label = "Momi",
         link = "https://en.wikipedia.org/wiki/Momi-class_destroyer"
     )]
